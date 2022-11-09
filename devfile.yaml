@@ -109,16 +109,6 @@ components:
     volume: {}
   - name: theia-local
     volume: {}
-  - name: che-machine-exec
-    container:
-      image: quay.io/eclipse/che-machine-exec@sha256:45ac7cf14440ae4a6eceb6a9fba9ded845acf3981fd1c9b0761e994a1cdf0df7
-      command:
-        - /go/bin/che-machine-exec
-        - '--url'
-        - 127.0.0.1:3333
-    attributes:
-      app.kubernetes.io/component: machine-exec
-      app.kubernetes.io/part-of: che-theia.eclipse.org
   - name: remote-runtime-injector
     container:
       image: quay.io/eclipse/che-theia-endpoint-runtime-binary@sha256:e72767d42e745132870ee9a5087774447ecfddcb5d279b877a4bfbf41892b5fd
