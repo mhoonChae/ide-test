@@ -109,6 +109,22 @@ components:
     volume: {}
   - name: theia-local
     volume: {}
+  - name: remote-runtime-injector
+    container:
+      image: eclipse/che-theia-endpoint-runtime-binary:next-test
+      env:
+        - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
+          value: /remote-endpoint/plugin-remote-endpoint
+        - name: REMOTE_ENDPOINT_VOLUME_NAME
+          value: remote-endpoint
+      volumeMounts:
+        - name: plugins
+          path: /plugins
+        - name: remote-endpoint
+          path: /remote-endpoint
+    attributes:
+      app.kubernetes.io/component: remote-runtime-injector
+      app.kubernetes.io/part-of: che-theia.eclipse.org
   - name: remote-endpoint
     volume:
       ephemeral: true
