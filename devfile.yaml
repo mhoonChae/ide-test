@@ -1,6 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
-  name: theia-ide-check1
+  name: theia-ide
 commands:
   - id: init-container-command-mhoon
     apply:
@@ -9,7 +9,7 @@ events:
   preStart:
     - init-container-command-mhoon
 components:
-  - name: theia-ide
+  - name: theia-ide-check1
     container:
       image: eclipse/che-theia:next
       env:
