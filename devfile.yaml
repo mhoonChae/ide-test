@@ -9,7 +9,7 @@ events:
   preStart:
     - init-container-command-mhoon
 components:
-  - name: theia-ide-check1
+  - name: theia-ide-check2
     container:
       image: eclipse/che-theia:next
       env:
