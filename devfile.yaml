@@ -9,7 +9,7 @@ events:
   preStart:
     - init-container-command-mhoon
 components:
-  - name: theia-ide-check3
+  - name: theia-ide-check4
     container:
       image: eclipse/che-theia:next
       imagePullPolicy: Never
