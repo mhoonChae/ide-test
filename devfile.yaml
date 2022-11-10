@@ -9,9 +9,10 @@ events:
   preStart:
     - init-container-command-mhoon
 components:
-  - name: theia-ide-check2
+  - name: theia-ide-check3
     container:
       image: eclipse/che-theia:next
+      imagePullPolicy: Never
       env:
         - name: THEIA_PLUGINS
           value: local-dir:///plugins
