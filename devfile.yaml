@@ -1,6 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
-  name: theia-ide
+  name: theia-ide-check1
 commands:
   - id: init-container-command-mhoon
     apply:
@@ -111,7 +111,7 @@ components:
     volume: {}
   - name: remote-runtime-injector
     container:
-      image: quay.io/eclipse/che-theia-endpoint-runtime-binary@sha256:e72767d42e745132870ee9a5087774447ecfddcb5d279b877a4bfbf41892b5fd
+      image: eclipse/che-theia-endpoint-runtime-binary:next-ubi8
       env:
         - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
           value: /remote-endpoint/plugin-remote-endpoint
