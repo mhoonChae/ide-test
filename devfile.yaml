@@ -11,7 +11,7 @@ events:
 components:
   - name: theia-ide
     container:
-      image: eclipse/che-theia:next-ubi8
+      image: quay.io/eclipse/che-theia:7021b8b
       imagePullPolicy: Never
       env:
         - name: THEIA_PLUGINS
