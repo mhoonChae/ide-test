@@ -12,6 +12,7 @@ components:
   - name: theia-ide
     container:
       image: eclipse/che-theia:next-ubi8
+      imagePullPolicy: Never
       env:
         - name: THEIA_PLUGINS
           value: local-dir:///plugins
@@ -111,7 +112,8 @@ components:
     volume: {}
   - name: remote-runtime-injector
     container:
-      image: asdfafa/sldfjslfj:test
+      image: eclipse/che-theia-endpoint-runtime-binary:next
+      imagePullPolicy: Never
       env:
         - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
           value: /remote-endpoint/plugin-remote-endpoint
