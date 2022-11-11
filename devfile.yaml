@@ -111,7 +111,7 @@ components:
     volume: {}
   - name: remote-runtime-injector
     container:
-      image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/eclipse/che-theia-endpoint-runtime-binary@sha256:2eba3d1ea2cb94d1a8a9b12474c9b712af8a85561b5b1a942ad5b2c7efc00d83
+      image: quay.io/eclipse/che-theia-endpoint-runtime-binary@sha256:e72767d42e745132870ee9a5087774447ecfddcb5d279b877a4bfbf41892b5fd
       env:
         - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
           value: /remote-endpoint/plugin-remote-endpoint
