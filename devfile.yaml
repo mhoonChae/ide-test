@@ -9,7 +9,7 @@ events:
   preStart:
     - init-container-command-mhoon
 components:
-  - name: theia-ide-check8
+  - name: theia-ide-check9
     container:
       image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/che-theia-dev@sha256:f52aea2a94762b59c60ea572409de1f3d866f4ecebad597e6a242bce314803f4
       env:
