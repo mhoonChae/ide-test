@@ -1,7 +1,6 @@
 schemaVersion: 2.1.0
-spec:
-  imagePullSecrets:
-    - name: bart
+imagePullSecrets:
+  - name: bart
 metadata:
   name: theia-ide
 commands:
