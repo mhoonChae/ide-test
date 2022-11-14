@@ -9,9 +9,10 @@ events:
   preStart:
     - init-container-command-mhoon
 components:
-  - name: theia-ide-check17
+  - name: theia-ide-check18
     container:
       image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/che-theia:next2
+      imagePullPolicy: Always
       env:
         - name: THEIA_PLUGINS
           value: local-dir:///plugins
