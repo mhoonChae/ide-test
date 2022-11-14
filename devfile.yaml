@@ -9,9 +9,9 @@ events:
   preStart:
     - init-container-command-mhoon
 components:
-  - name: theia-ide-check19
+  - name: theia-ide-check20
     container:
-      image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/che-theia:next2
+      image: skgood/chespace:next
       env:
         - name: THEIA_PLUGINS
           value: local-dir:///plugins
@@ -102,8 +102,6 @@ components:
           exposure: public
           secure: false
           protocol: wss
-    imagePullSecrets:
-      - name: regcred1
     attributes:
       app.kubernetes.io/component: che-theia
       app.kubernetes.io/part-of: che-theia.eclipse.org
