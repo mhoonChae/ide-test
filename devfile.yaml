@@ -12,7 +12,7 @@ events:
   preStart:
     - init-container-command-mhoon
 components:
-  - name: theia-ide-check20
+  - name: theia-ide-check21
     container:
       image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/che-theia:next2
       env:
