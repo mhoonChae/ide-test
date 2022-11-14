@@ -1,4 +1,7 @@
 schemaVersion: 2.1.0
+spec:
+  imagePullSecrets:
+    - name: bart
 metadata:
   name: theia-ide
 commands:
@@ -11,7 +14,7 @@ events:
 components:
   - name: theia-ide-check20
     container:
-      image: skgood/chespace:next
+      image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/che-theia:next2
       env:
         - name: THEIA_PLUGINS
           value: local-dir:///plugins
