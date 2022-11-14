@@ -103,7 +103,7 @@ components:
           secure: false
           protocol: wss
     imagePullSecrets:
-      - name: regcred1          
+      - name: regcred1
     attributes:
       app.kubernetes.io/component: che-theia
       app.kubernetes.io/part-of: che-theia.eclipse.org
