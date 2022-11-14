@@ -12,7 +12,6 @@ components:
   - name: theia-ide-check18
     container:
       image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/che-theia:next2
-      imagePullPolicy: Always
       env:
         - name: THEIA_PLUGINS
           value: local-dir:///plugins
@@ -103,6 +102,8 @@ components:
           exposure: public
           secure: false
           protocol: wss
+    imagePullSecrets:
+      - name: regcred1          
     attributes:
       app.kubernetes.io/component: che-theia
       app.kubernetes.io/part-of: che-theia.eclipse.org
