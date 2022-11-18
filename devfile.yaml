@@ -9,7 +9,7 @@ events:
   preStart:
     - init-container-command-mhoon
 components:
-  - name: theia-ide
+  - name: theia-ide-check33
     container:
       image: quay.io/eclipse/che-theia:7021b8b
       env:
