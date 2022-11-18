@@ -109,6 +109,4 @@ components:
     volume: {}
   - name: theia-local
     volume: {}
-   - name: remote-endpoint
-    volume:
-      ephemeral: true
+
