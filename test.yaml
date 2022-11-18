@@ -1,6 +1,13 @@
 schemaVersion: 2.1.0
 metadata:
   name: theia-ide-mhoon
+commands:
+  - id: init-container-command-mhoon
+    apply:
+      component: remote-runtime-injector
+events:
+  preStart:
+    - init-container-command-mhoon
 components:
   - name: theia-ide-mhoon
     container:
@@ -102,3 +109,22 @@ components:
     volume: {}
   - name: theia-local
     volume: {}
+  - name: remote-runtime-injector
+    container:
+      image: quay.io/eclipse/che-theia-endpoint-runtime-binary:7.56.0
+      env:
+        - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
+          value: /remote-endpoint/plugin-remote-endpoint
+        - name: REMOTE_ENDPOINT_VOLUME_NAME
+          value: remote-endpoint
+      volumeMounts:
+        - name: plugins
+          path: /plugins
+        - name: remote-endpoint
+          path: /remote-endpoint
+    attributes:
+      app.kubernetes.io/component: remote-runtime-injector
+      app.kubernetes.io/part-of: che-theia.eclipse.org
+  - name: remote-endpoint
+    volume:
+      ephemeral: true
