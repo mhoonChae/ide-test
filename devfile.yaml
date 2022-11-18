@@ -4,7 +4,7 @@ metadata:
 commands:
   - id: init-container-command-mhoon
     apply:
-      component: remote-runtime-injector
+      component: remote-runtime-injector-test
 events:
   preStart:
     - init-container-command-mhoon
@@ -109,7 +109,7 @@ components:
     volume: {}
   - name: theia-local
     volume: {}
-  - name: remote-runtime-injector
+  - name: remote-runtime-injector-test
     container:
       image: quay.io/eclipse/che-theia-endpoint-runtime-binary@sha256:8c903f900640530980f34b24e5d39abea93a5dfb456273b4b0c48f72ee6280b9
       env:
