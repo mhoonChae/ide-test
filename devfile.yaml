@@ -6,8 +6,6 @@ components:
     container:
       image: artifactory-mb.harman.com:5036/aebt/che-theia@sha256:9e529734b22f80dfde5037cd130f0a6218cd60397ae814c76ce51bf7df9ac0b5
       env:
-        - name: THEIA_PLUGINS
-          value: local-dir:///plugins
         - name: HOSTED_PLUGIN_HOSTNAME
           value: 0.0.0.0
         - name: HOSTED_PLUGIN_PORT
