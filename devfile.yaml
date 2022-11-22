@@ -10,7 +10,7 @@ attributes:
         location: 'https://192.168.49.2.nip.io/dashboard/devfile-registry/devfiles/empty.yaml'
       factory:
         params: >-
-          che-editor=artifactory-mb.harman.com:5036/aebt/che-theia@sha256:9e529734b22f80dfde5037cd130f0a6218cd60397ae814c76ce51bf7df9ac0b5&storageType=per-user&url=https://192.168.49.2.nip.io/dashboard/devfile-registry/devfiles/empty.yaml
+          che-editor=theia-image&storageType=per-user&url=https://192.168.49.2.nip.io/dashboard/devfile-registry/devfiles/empty.yaml
     che.eclipse.org/last-updated-timestamp: '2022-11-22T23:41:03.418Z'
 components:
   - container:
@@ -20,4 +20,4 @@ components:
   - container:
       image: 'artifactory-mb.harman.com:5036/aebt/che-theia@sha256:9e529734b22f80dfde5037cd130f0a6218cd60397ae814c76ce51bf7df9ac0b5'
       sourceMapping: /projects
-    name: theia-image    
+    name: theia-image
