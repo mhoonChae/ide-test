@@ -4,7 +4,7 @@ metadata:
 components:
   - name: theia-ide
     container:
-      image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/che-theia@sha256:141bb55a440ce9fd91d553e6dd9af871f6f88b8789c19a169049feb142158602
+      image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/che-theia@sha256:9e529734b22f80dfde5037cd130f0a6218cd60397ae814c76ce51bf7df9ac0b5
       env:
         - name: THEIA_PLUGINS
           value: local-dir:///plugins
