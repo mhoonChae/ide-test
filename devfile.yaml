@@ -2,16 +2,16 @@ schemaVersion: 2.1.0
 metadata:
   name: theia-ide
 commands:
-  - id: init-container-command
+  - id: init-container-command-mhoon
     apply:
       component: remote-runtime-injector
 events:
   preStart:
-    - init-container-command
+    - init-container-command-mhoon
 components:
-  - name: theia-ide
+  - name: theia-ide-check6
     container:
-      image: quay.io/eclipse/che-theia:7021b8b
+      image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/che-theia@sha256:9e529734b22f80dfde5037cd130f0a6218cd60397ae814c76ce51bf7df9ac0b5
       env:
         - name: THEIA_PLUGINS
           value: local-dir:///plugins
@@ -109,16 +109,6 @@ components:
     volume: {}
   - name: theia-local
     volume: {}
-  - name: che-machine-exec
-    container:
-      image: quay.io/eclipse/che-machine-exec@sha256:45ac7cf14440ae4a6eceb6a9fba9ded845acf3981fd1c9b0761e994a1cdf0df7
-      command:
-        - /go/bin/che-machine-exec
-        - '--url'
-        - 127.0.0.1:3333
-    attributes:
-      app.kubernetes.io/component: machine-exec
-      app.kubernetes.io/part-of: che-theia.eclipse.org
   - name: remote-runtime-injector
     container:
       image: quay.io/eclipse/che-theia-endpoint-runtime-binary@sha256:e72767d42e745132870ee9a5087774447ecfddcb5d279b877a4bfbf41892b5fd
