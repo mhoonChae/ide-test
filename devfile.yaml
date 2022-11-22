@@ -1,6 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
-  name: mhoon-test1
+  name: mhoon-test2
   namespace: che-user
 attributes:
   dw.metadata.annotations:
@@ -17,3 +17,7 @@ components:
       image: 'quay.io/devfile/universal-developer-image:ubi8-38da5c2'
       sourceMapping: /projects
     name: universal-developer-image
+  - container:
+      image: 'artifactory-mb.harman.com:5036/aebt/che-theia@sha256:9e529734b22f80dfde5037cd130f0a6218cd60397ae814c76ce51bf7df9ac0b5'
+      sourceMapping: /projects
+    name: theia-image    
