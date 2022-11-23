@@ -145,7 +145,7 @@ components:
       value: https://che-eclipse-che.apps.cluster-fce1.fce1.sandbox1073.opentlc.com/plugin-registry/v3
     - name: CHE_PLUGIN_REGISTRY_INTERNAL_URL
       value: http://plugin-registry.eclipse-che.svc:8080/v3
-    image: quay.io/eclipse/che-theia:next
+    image: artifactory-mb.harman.com:5036/aebt/che-theia@sha256:9e529734b22f80dfde5037cd130f0a6218cd60397ae814c76ce51bf7df9ac0b5
     memoryLimit: 512M
     mountSources: true
     sourceMapping: /projects
