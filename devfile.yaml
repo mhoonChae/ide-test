@@ -1,6 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
-  name: theia-ide-mhoon105
+  name: theia-ide-mhoon10
 components:
   - name: theia-ide
     container:
@@ -98,24 +98,7 @@ components:
     attributes:
       app.kubernetes.io/component: che-theia
       app.kubernetes.io/part-of: che-theia.eclipse.org
+  - name: plugins
+    volume: {}
   - name: theia-local
     volume: {}
-  - name: tools
-    container:
-      image: quay.io/devfile/universal-developer-image:ubi8-38da5c2
-      memoryLimit: 3Gi
-      endpoints:
-        - exposure: none
-          name: debug
-          protocol: tcp
-          targetPort: 5005
-        - exposure: public
-          name: 8080-tcp
-          protocol: http
-          targetPort: 8080
-      volumeMounts:
-        - name: m2
-          path: /home/user/.m2
-  - name: m2
-    volume:
-      size: 1G
