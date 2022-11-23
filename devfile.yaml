@@ -102,9 +102,7 @@ components:
     volume: {}
   - name: theia-local
     volume: {}
-  - attributes:
-      app.kubernetes.io/name: nodejs
-      che-theia.eclipse.org/vscode-extensions: []
+  - name: ubi
     container:
       args:
       - sh
@@ -120,8 +118,6 @@ components:
       env:
       - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
         value: /remote-endpoint/plugin-remote-endpoint
-      - name: THEIA_PLUGINS
-        value: local-dir:///plugins/sidecars/nodejs
       image: quay.io/devfile/universal-developer-image:ubi8-38da5c2
       memoryLimit: 1G
       mountSources: true
@@ -131,4 +127,4 @@ components:
         path: /remote-endpoint
       - name: plugins
         path: /plugins
-    name: nodejs    
+
