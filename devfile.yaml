@@ -1,34 +1,11 @@
 schemaVersion: 2.1.0
 metadata:
-  name: theia-ide-mhoon50
+  name: theia-ide-mhoon60
 components:
-  - name: tools
-    container:
-      args:
-      - sh
-      - -c
-      - ${PLUGIN_REMOTE_ENDPOINT_EXECUTABLE}
-      endpoints:
-      - attributes:
-          controller.devfile.io/endpoint-url: http://workspace42b53fb0416c4bb3-1.apps.cluster-fce1.fce1.sandbox1073.opentlc.com/
-        exposure: public
-        name: nodejs
-        protocol: http
-        targetPort: 3000
-      env:
-      - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
-        value: /remote-endpoint/plugin-remote-endpoint
-      - name: THEIA_PLUGINS
-        value: local-dir:///plugins/sidecars/nodejs
-      image: quay.io/devfile/universal-developer-image:ubi8-38da5c2
-      memoryLimit: 1G
-      mountSources: true
+  - container:
+      image: 'quay.io/devfile/universal-developer-image:ubi8-38da5c2'
       sourceMapping: /projects
-      volumeMounts:
-      - name: remote-endpoint
-        path: /remote-endpoint
-      - name: plugins
-        path: /plugins
+    name: universal-developer-image
 components:
   - name: theia-ide
     container:
