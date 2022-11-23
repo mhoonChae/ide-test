@@ -1,7 +1,10 @@
 schemaVersion: 2.1.0
 metadata:
-  name: theia-ide-mhoon10
+  name: theia-ide-mhoon20
 components:
+  - name: universal-image
+    container:
+      image: quay.io/devfile/universal-developer-image:ubi8-38da5c2
   - name: theia-ide
     container:
       image: artifactory-mb.harman.com:5036/aebt/che-theia@sha256:9e529734b22f80dfde5037cd130f0a6218cd60397ae814c76ce51bf7df9ac0b5
