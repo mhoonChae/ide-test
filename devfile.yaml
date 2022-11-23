@@ -1,3 +1,4 @@
+schemaVersion: 2.1.0
 commands:
 - apply:
     component: remote-runtime-injector
