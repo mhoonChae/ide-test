@@ -2,12 +2,33 @@ schemaVersion: 2.1.0
 metadata:
   name: theia-ide-mhoon2
 components:
+  - name: universal-developer-image
+    container:
+      args:
+        - sh
+        - '-c'
+        - '${PLUGIN_REMOTE_ENDPOINT_EXECUTABLE}'
+      env:
+        - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
+          value: /remote-endpoint/plugin-remote-endpoint
+      image: 'quay.io/devfile/universal-developer-image:ubi8-38da5c2'
+      sourceMapping: /projects
+      volumeMounts:
+        - name: remote-endpoint
+          path: /remote-endpoint
+        - name: plugins
+          path: /plugins
+    attributes:
+      app.kubernetes.io/name: universal-developer-image
+      che-theia.eclipse.org/vscode-extensions: []
   - name: theia-ide
     container:
       image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/che-theia@sha256:141bb55a440ce9fd91d553e6dd9af871f6f88b8789c19a169049feb142158602
       env:
+        - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
+          value: /remote-endpoint/plugin-remote-endpoint
         - name: THEIA_PLUGINS
-          value: local-dir:///plugins
+          value: 'local-dir:///plugins/sidecars/universal-developer-image'
         - name: HOSTED_PLUGIN_HOSTNAME
           value: 0.0.0.0
         - name: HOSTED_PLUGIN_PORT
