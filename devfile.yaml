@@ -1,7 +1,41 @@
 schemaVersion: 2.1.0
 metadata:
   name: theia-ide-mhoon2
+attributes:
+  controller.devfile.io/devworkspace-config:
+    name: devworkspace-config
+    namespace: eclipse-che
+  controller.devfile.io/storage-type: per-user
 components:
+  - attributes:
+      app.kubernetes.io/name: universal-developer-image
+      che-theia.eclipse.org/vscode-extensions: []
+    container:
+      args:
+        - sh
+        - '-c'
+        - '${PLUGIN_REMOTE_ENDPOINT_EXECUTABLE}'
+      env:
+        - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
+          value: /remote-endpoint/plugin-remote-endpoint
+        - name: THEIA_PLUGINS
+          value: 'local-dir:///plugins/sidecars/universal-developer-image'
+        - name: CHE_DASHBOARD_URL
+          value: 'https://192.168.49.2.nip.io'
+        - name: CHE_PLUGIN_REGISTRY_URL
+          value: 'https://192.168.49.2.nip.io/plugin-registry/v3'
+        - name: CHE_PLUGIN_REGISTRY_INTERNAL_URL
+          value: 'http://plugin-registry.eclipse-che.svc:8080/v3'
+        - name: OPENVSX_REGISTRY_URL
+          value: 'https://open-vsx.org'
+      image: 'quay.io/devfile/universal-developer-image:ubi8-38da5c2'
+      sourceMapping: /projects
+      volumeMounts:
+        - name: remote-endpoint
+          path: /remote-endpoint
+        - name: plugins
+          path: /plugins
+    name: universal-developer-image
   - name: theia-ide
     container:
       image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/che-theia@sha256:141bb55a440ce9fd91d553e6dd9af871f6f88b8789c19a169049feb142158602
