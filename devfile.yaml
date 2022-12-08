@@ -7,7 +7,7 @@ components:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
       memoryLimit: 2Gi
       memoryRequest: 256Mi
-  - name: theia-ide-check1
+  - name: theia-ide
     container:
       image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/che-theia@sha256:141bb55a440ce9fd91d553e6dd9af871f6f88b8789c19a169049feb142158602
       env:
