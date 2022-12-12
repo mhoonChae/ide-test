@@ -2,16 +2,6 @@ schemaVersion: 2.1.0
 metadata:
   name: theia-ide-mhoon5
 components:
-  - name: che-machine-exec
-    container:
-      image: quay.io/eclipse/che-machine-exec:7.57.0
-      command:
-        - /go/bin/che-machine-exec
-        - '--url'
-        - 127.0.0.1:3333
-    attributes:
-      app.kubernetes.io/component: machine-exec
-      app.kubernetes.io/part-of: che-theia.eclipse.org
   - name: plugins
     volume: {}
   - name: theia-local
