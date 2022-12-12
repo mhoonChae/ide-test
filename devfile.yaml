@@ -1,7 +1,12 @@
 schemaVersion: 2.1.0
 metadata:
-  name: theia-ide-mhoon22
+  name: theia-ide-mhoon35
 components:
+  - name: devtools
+    container:
+      image: registry.access.redhat.com/ubi8/ubi-minimal
+      memoryLimit: 2Gi
+      memoryRequest: 256Mi
   - name: theia-ide
     container:
       image: aebt-arhud-docker.bart.sec.samsung.net/eclipse/che-theia@sha256:141bb55a440ce9fd91d553e6dd9af871f6f88b8789c19a169049feb142158602
@@ -34,6 +39,67 @@ components:
           exposure: public
           secure: false
           protocol: https
+        - name: webviews
+          attributes:
+            type: webview
+            cookiesAuthEnabled: true
+            discoverable: false
+            unique: true
+            urlRewriteSupported: true
+          targetPort: 3100
+          exposure: public
+          secure: false
+          protocol: https
+        - name: mini-browser
+          attributes:
+            type: mini-browser
+            cookiesAuthEnabled: true
+            discoverable: false
+            unique: true
+            urlRewriteSupported: true
+          targetPort: 3100
+          exposure: public
+          secure: false
+          protocol: https
+        - name: theia-dev
+          attributes:
+            type: ide-dev
+            discoverable: false
+            urlRewriteSupported: true
+          targetPort: 3130
+          exposure: public
+          protocol: http
+        - name: theia-redirect-1
+          attributes:
+            discoverable: false
+            urlRewriteSupported: true
+          targetPort: 13131
+          exposure: public
+          protocol: http
+        - name: theia-redirect-2
+          attributes:
+            discoverable: false
+            urlRewriteSupported: true
+          targetPort: 13132
+          exposure: public
+          protocol: http
+        - name: theia-redirect-3
+          attributes:
+            discoverable: false
+            urlRewriteSupported: true
+          targetPort: 13133
+          exposure: public
+          protocol: http
+        - name: terminal
+          attributes:
+            type: collocated-terminal
+            discoverable: false
+            cookiesAuthEnabled: true
+            urlRewriteSupported: true
+          targetPort: 3333
+          exposure: public
+          secure: true
+          protocol: ws
     attributes:
       app.kubernetes.io/component: che-theia
       app.kubernetes.io/part-of: che-theia.eclipse.org
@@ -41,8 +107,3 @@ components:
     volume: {}
   - name: theia-local
     volume: {}
-  - name: devtools-test
-    container:
-      image: registry.access.redhat.com/ubi8/ubi-minimal
-      memoryLimit: 2Gi
-      memoryRequest: 256Mi
