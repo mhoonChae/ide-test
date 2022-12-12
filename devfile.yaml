@@ -5,6 +5,8 @@ commands:
   - id: init-container-command
     apply:
       component: remote-runtime-injector
+      component: che-machine-exec
+      component: devtools
 events:
   preStart:
     - init-container-command
