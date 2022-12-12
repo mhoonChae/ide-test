@@ -93,8 +93,8 @@ components:
             urlRewriteSupported: true
           targetPort: 3333
           exposure: public
-          secure: false
-          protocol: wss
+          secure: true
+          protocol: ws
     attributes:
       app.kubernetes.io/component: che-theia
       app.kubernetes.io/part-of: che-theia.eclipse.org
