@@ -1,6 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
-  name: theia-ide-mhoon35
+  name: theia-ide-mhoon36
 components:
   - name: theia-ide-contributions
     attributes:
