@@ -118,6 +118,7 @@ components:
     attributes:
       app.kubernetes.io/component: che-theia
       app.kubernetes.io/part-of: che-theia.eclipse.org
+      controller.devfile.io/container-contribution: true
   - name: plugins
     volume: {}
   - name: theia-local
