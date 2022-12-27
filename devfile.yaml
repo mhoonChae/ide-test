@@ -1,6 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
-  name: theia-ide-mhoon38
+  name: theia-ide-mhoon37
 components:
   - name: theia-ide
     container:
@@ -14,6 +14,11 @@ components:
           value: '3130'
         - name: THEIA_HOST
           value: 127.0.0.1
+      volumeMounts:
+        - name: plugins
+          path: /plugins
+        - name: theia-local
+          path: /home/theia/.theia
       mountSources: true
       memoryLimit: 512M
       cpuLimit: 1500m
@@ -93,6 +98,7 @@ components:
     attributes:
       app.kubernetes.io/component: che-theia
       app.kubernetes.io/part-of: che-theia.eclipse.org
+      controller.devfile.io/merge-contribution: true
   - name: plugins
     volume: {}
   - name: theia-local
