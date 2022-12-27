@@ -14,12 +14,6 @@ components:
           value: '3130'
         - name: THEIA_HOST
           value: 127.0.0.1
-      volumeMounts:
-        - name: plugins
-          path: /plugins
-        - name: theia-local
-          path: /home/theia/.theia
-      mountSources: true
       memoryLimit: 512M
       cpuLimit: 1500m
       cpuRequest: 100m
