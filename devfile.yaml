@@ -31,9 +31,9 @@ components:
       image: 'quay.io/devfile/universal-developer-image:ubi8-38da5c2'
       sourceMapping: /projects
       volumeMounts:
-        - name: m2
-          path: /home/user/.m2
+        - name: aebt-ide-test
+          path: /home/aebt-ide-test
     name: universal-developer-image
-  - name: m2
+  - name: aebt-ide-test
     volume:
       size: 1G
