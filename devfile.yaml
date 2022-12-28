@@ -34,3 +34,6 @@ components:
         - name: m2
           path: /home/user/.m2
     name: universal-developer-image
+  - name: m2
+    volume:
+      size: 1G
