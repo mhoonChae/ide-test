@@ -1,6 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
-  name: theia-aebt-test01
+  name: theia-aebt-test02
 attributes:
   controller.devfile.io/devworkspace-config:
     name: devworkspace-config
