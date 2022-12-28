@@ -31,8 +31,6 @@ components:
       image: 'quay.io/devfile/universal-developer-image:ubi8-38da5c2'
       sourceMapping: /projects
       volumeMounts:
-        - name: remote-endpoint
-          path: /remote-endpoint
-        - name: plugins
-          path: /plugins
+        - name: m2
+          path: /home/user/.m2
     name: universal-developer-image
